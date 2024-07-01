@@ -30,7 +30,13 @@ app.get("/livros", (req, res) =>{
 })
 
 app.get("/livros/:id", (req, res) =>{
-    res.status(200).json(livros);
+    const index = buscaLivro(req.params.id)
+    res.status(200).json(livros[index]);
 })
 
 export default app;
+
+// get - Obter
+// post - Enviar
+// put - Atualizar
+// delete - Deletar
